@@ -1,6 +1,10 @@
+import java.util.Scanner;
+
 public class fibonacci27 {
     public static void main(String[] args) {
-        int n = 10;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Masukan jumlah: ");
+        int n = sc.nextInt();
         System.out.println("Deret Fibonacci sampai dengan " + n + ":");
         for (int i = 0; i < n; i++) {
             System.out.print(fibonacci(i) + " ");

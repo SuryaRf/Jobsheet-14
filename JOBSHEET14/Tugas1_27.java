@@ -1,29 +1,41 @@
 import java.util.Scanner;
 
 public class Tugas1_27 {
-    public static void deretDescendingRekursif(int n) {
-        if (n >= 0) {
-            System.out.print(n + " ");
-            deretDescendingRekursif(n - 1);
+    public static int hitungRekursif(int n) {
+        if (n == 1) {
+            System.out.print("1 = ");
+            return 1;
+        } else {
+            System.out.print(n + " + ");
+            return n + hitungRekursif(n - 1);
         }
     }
-    public static void deretDescendingIteratif(int n) {
-        for (int i = n; i >= 0; i--) {
-            System.out.print(i + " ");
+
+    public static void hitungIteratif(int n) {
+        int total = 0;
+        for (int i = 1; i <= n; i++) {
+            System.out.print(i);
+            if (i < n) {
+                System.out.print(" + ");
+            }
+            total += i;
         }
+        System.out.print(" = " + total);
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        
+
         System.out.print("Masukkan nilai n : ");
         int n = scanner.nextInt();
-        
+
         System.out.println("Menggunakan fungsi rekursif : ");
-        deretDescendingRekursif(n);
-        
+        int totalRekursif = hitungRekursif(n);
+        System.out.println(totalRekursif);
+
         System.out.println("\nMenggunakan fungsi iteratif :  ");
-        deretDescendingIteratif(n);
-        
+        hitungIteratif(n);
+
         scanner.close();
     }
 }
